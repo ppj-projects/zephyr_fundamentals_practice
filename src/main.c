@@ -47,9 +47,11 @@ K_SEM_DEFINE(temp_avg_console_block_sem, 0, 1);
 
 // Creating a queue for temp data. This should be treated as a circular queue... for now I'll
 // put this down, but maybe I'll just make a struct to handle the head/tail later
-static uint32_t temp_data_queue[10];
+#define TEMP_DATA_QUEUE_MAX 10
+#define TEMP_DATA_QUEUE_MIN 0
+static uint32_t temp_data_queue[TEMP_DATA_QUEUE_MAX];
 // This index needs to wrap around the queue. We write over old entries. 
-static uint32_t temp_data_index = 0;
+static uint32_t temp_data_index = TEMP_DATA_QUEUE_MIN;
 
 // Keep track of old and new temperature averages. This will simply keep track of whether there
 // was a difference or not. For now. I guess
