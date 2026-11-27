@@ -14,5 +14,5 @@ BUTTON3 - application pause
 
 UART - UARTE21->debugger console
 
-I2C - 
+I2C - TWINS24 on P3.1 (SCL) and P3.2 (SDA)
 
